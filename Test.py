@@ -21,7 +21,7 @@ print(658/7)
 year=2022
 print(year-1969)
 print("My favourite game is Phantom Forces.")
-print("My favourite class is English and Math.")
+print("My favourite class is Englizxsh and Math.")
 
 
 favouritegame = input("What is your favourite game?")
