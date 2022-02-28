@@ -1,89 +1,117 @@
-#1 
+#Question 1 
 print("Through the gates of hell \n As we make our way to heaven \n Through the Nazi lines \n Primo Victoria")
 print("")
-#2
+#Question 2
 print("Now stand aside, worthy adversary. \n Tis but a scratch \n A scratch?! Your arm's off! \n I've had worse \n You liar! \n Come on then you pansy! \n")
-#3
+#Question 3
 print("A string is a collection of characters as it was directly inputted by the keyboard, eg. 10+10 will be shown as inputed - 10+10.")
 print("")
-#4
+#Question 4
 print("An integer is a whole number which can be affected by calculations and equasions, it is relatively the same thing as a float\n")
-#5
+#Question 5
 print("A float is like an integer, but it has the capabilities of being able to use decimals for better and more accurate calculations.")
-#6
+#Question 6
 print(543/3)
 print("")
-#7
+#Question 7
 print(int(543/3))
 print("")
-#8
+#Question 8
 print(543&3)
 print("")
-#9
+#Question 9
 print(1000&9)
 print("")
-#10
+#Question 10
 print(int(434/10))
 print("")
-#11
+#Question 11
 print(3&2)
 print("")
-#12
+#Question 12
 print(5&5)
 print("")
-#13
+#Question 13
 print(555/2)
 print("")
-#14
+#Question 14
 print(123/2)
 print("")
-#15
+#Question 15
 print(123//2)
 print("")
-#16
+#Question 16
 print(123%2)
 print("")
-#17
+#Question 17
 print(764%2)
 print("")
-#18
+#Question 18
 print(165//2)
 print("")
-#19
+#Question 19
 print(2.5+2.75)
 print("")
-#20
+#Question 20
 print(20+20)
 print("")
-#21
+#Question 21
 print(20-2.5)
 print("")
-#22
+#Question 22
 print(2.5-2)
 print("")
-#23
+#Question 23
 print(4/2)
 print("")
-#24
+#Question 24
 print(5*2.5)
 print("")
-#25
+#Question 25
 print(5*5)
 print("")
-#26
+#Question 26
 print("Charlie"*10)
 print("")
-#27
+#Question 27
 print("Charlie\n"*10)
 print("")
-#28
-print("5+10=" str(5+10))
+#Question 28
+print("5+10="+str(5+10))
 print("")
-#29
-print("15/2=" str(15/2))
+#Question 29
+print("15/2="+str(15/2))
 print("")
-#30
-print("30/2*5=" str(15/2*5))
+#Question 30
+print("30/2*5="+str(15/2*5))
 print("")
-#31
-print("30/2*5=" int(30/2*5))
+#Question 31
+print("30/2*5="+str(30/2*5))
+print("")
+
+
+#5.4 (Excersises)
+
+#Question 1
+playerlives = 3
+print("")
+#Question 2
+loginname = input("What is your Username? - \n")
+print(f"Your username is {loginname}")
+#Extra Code ontop to test if the input works
+print("")
+#Question 3
+usermoney = 1234.11169
+print("")
+#Question 4
+phonenumber = int(input("What is your phone number - \n"))
+print(phonenumber)
+print("")
+#Question 5
+
+
+
+
+
+
+
