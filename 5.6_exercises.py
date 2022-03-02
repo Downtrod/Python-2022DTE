@@ -8,17 +8,63 @@ pants =15
 belt =60
 shoes =40
 
-print(f"In this shop, you can either buy a hat, top, pants, a belt, and shoes, each of these things costing 20,30,15,60 and 40 dollars respectively.\n")
+print(f"The user currently has ${money} in their bank account.")
+print("Buying a hat..")
+money -= 20
+print(f"The user currently has ${money}")
+print("Buying a top..")
+money -= 30
+print(f"The user currently has ${money}")
+print("Buying pants..")
+money -= 15
+print(f"The user currently has ${money}")
+print("Buying a belt..")
+money -= 60
+print(f"The user currently has ${money}")
+print("Buying shoes..")
+money -= 40
+print(f"The user currently has ${money}")
+'''
+print(f"In this shop, you can either buy a hat, top, pants, a belt, and shoes, each of these things costing 20,30,15,60 and 40 dollars respectively., You currently have $200 in your bank account.\n")
 inshop = input("Would you like to buy anything? y or n")
 if inshop == "n":
 	print("Nevermind than, get out of my shop.")
 elif inshop == "y":
 	while inshop == "y":
-		buying = input("Good!, now what would you like to buy?")
+		repeat = "y"
+
+		while buying = input("Good!, now what would you like to buy? If you want to leave the shop just say n, you can buy multiple items if you wish.")
 		if buying == "hat":
-			money-hat
+			money-20
 			print(f"You've bought a hat! You currently have ${money} left in your bank account.")
-		elif buyinh
+			buying = input("Anything else?")
+
+		elif buying == "top":
+			money-30
+			print(f"You've bought a top! You have ${money} in your bank account.")
+			buying = input("Anything else?")
+		elif buying == "pants":
+			money-15
+			print(f"You've bought some pants. You currently have ${money} in your bank account.")
+			buying = input("Anything else?")
+		elif buying == "belt":
+			money-60
+			print(f"You've bought a belt, you current bank balance is ${money}")
+			buying = input("Anything else?")
+		elif buying == "shoes":
+			money-40
+			print(f"You've bought some shoes, you have ${money} right now.")
+			buying = input("Anything else?")
+		elif buying == "n":
+			inshop == "n"
+		else:
+			print("Pick either a hat,top,pants,belt,shoes. If you want to leave the shop say n")
+#this code also didnt work and i cant bother to finish it so I'll just do the question.
+'''
+
+
+
+
 
 
 
