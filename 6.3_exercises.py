@@ -57,15 +57,69 @@ userfriends=int(input("How much friends do you have? - \n"))
 print("")
 #Question 17
 sharedapples = (int(userapple/userfriends))
+leftover = (userapple%userfriends)
 print(f"If the apples are shared equally among the friends, they will have {sharedapples} apples each.")
-
-
-print("The user will have {leftover} apples left over")
-
-
-
-
-
+print(f"The user will have {leftover} apples left over")
+print("")
+#Question 18
+pizzas = int(input("How many pizzas do you want?\n"))
+print("")
+#Question 19
+people = int(input("How many people are you feeding? - \n"))
+print("")
+#Question 20
+pizzaslices = (pizzas*8)
+sharedpizzaslices = (int(pizzaslices/people))
+leftoverpizzas = (pizzaslices%people)
+print(f"If the pizzas are shared equally among the people, they will have {sharedpizzaslices} pizza slices each.")
+print(f"The user will have {leftoverpizzas} pizza slices left.")
+print("")
+#Question 21
+userdollars = float(input("How much money do you have in your bank account? \n"))
+print("")
+#Question 22
+tvcosts = float(input("How much does a tv which you can afford cost?\n"))
+print("")
+#Question 23
+print(f"The user will have ${userdollars-tvcosts} left over if they buy the tv.")
+print("")
+#Question 24
+print(f"If the tv has a 20% discount the user will have ${userdollars-tvcosts*0.8} left over.")
+print("")
+#Question 25
+ethereum = float(input("How much Ethereum do you have?"))
+print("")
+#Question 26
+ethereumvalue = 4136.89
+print("")
+#Question 27
+dollarvalue_bitcoin = int(ethereum*ethereumvalue)
+print(f"You current worth in Ethereum is ${dollarvalue_bitcoin}")
+print("")
+#Question 28
+incomeweek = float(input("How much money do you earn in a week? \n"))
+print("")
+#Question 29
+taxrate = float(input("What is the tax rate?"))
+decimaltax = float(taxrate/100)
+print("")
+#Question 30
+print(f"The user will take home ${incomeweek* (1-decimaltax)}")
+print("")
+#Question 31
+namebook = input("Give me the name of a book. \n")
+print("")
+#Question 32
+x = namebook.lower()
+y = namebook.upper()
+z = namebook.title()
+print(f"{x} {y} {z}")
+#Question 33
+randomnumber= int(input("Give me a number"))
+print("")
+#Question 34
+print(namebook*randomnumber)
+print("")
 
 
 
