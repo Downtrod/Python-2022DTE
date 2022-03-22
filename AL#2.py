@@ -1,4 +1,7 @@
 from adventurelib import *
+
+
+Room.items = Bag()
 #Rooms
 
 space = Room("""
@@ -40,7 +43,15 @@ escape_pods = Room("""
 	""")
 mess_hall = Room("""
 	The mess hall is a large open area filled with many seats, all of which are turned over or
-	in a splintered burnt heap, everywhere you look is a dead corpse, some killed even by large pieces of wood.)
+	in a splintered burnt heap, everywhere you look is a dead corpse, some killed even by large pieces of wood.
+	""")
+
+#Bags
+mess_hall.items.add(red_keycard)
+cargo.items.add(knife)
+escape_pods.items.add(adamantium_katana)
+
+
 #Directions
 spaceship.east = hallway
 spaceship.south= quarters
@@ -67,7 +78,11 @@ def travel(direction):
 def look():
 	global current_room
 	print(current_room)
-	print(f"You can go {current_room.exit()}.")
+	print(f"You can go {current_room.exits()}.")
+	if len(current_room.items) > 0: #if items are found in room
+		print("You also find a.. \n")
+		for item in current_room.items:
+			print(item) #Prints out each item in the current room
 
 #Item Descriptions / define
 
@@ -88,18 +103,28 @@ inventory = Bag()
 
 
 #Inventory
-@when("Inventory")
+@when("inventory")
+@when("inv")
+@when("inven")
+@when("show inventory")
+@when("show inv")
+@when("items")
+@when("backpack")
 def player_inventory():
 	print('You are currently carrying')
 	for item in inventory:
 		print(item)
 
-@when("search")
+@when("pick up ITEM")
+@when("take ITEM")
+@when("get ITEM")
 def pickup(item):
 	if item in current_room.items:
 		y = current_room.items.take(item)
 		inventory.add(y)
 		print(f"You picked up {item}")
+	else:
+		print(f"You don't see anything relating to a {item}")
 
 #Enter Spaceship (Room 1)
 
