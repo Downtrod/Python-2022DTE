@@ -12,8 +12,8 @@ def brush_teeth():
 def comb_hair():
 	say("""
 		You brush your long flowing locks with the
-		gold hairbush that you have selected from
-		in the red basket
+		gold hairbush that you have selected from the ones
+		in the red basket.
 		""")
 def main():
 	start()
