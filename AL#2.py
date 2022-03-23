@@ -45,24 +45,28 @@ mess_hall = Room("""
 	The mess hall is a large open area filled with many seats, all of which are turned over or
 	in a splintered burnt heap, everywhere you look is a dead corpse, some killed even by large pieces of wood.
 	""")
+current_room = space
+print(current_room)
 
-#Bags
-mess_hall.items.add(red_keycard)
-cargo.items.add(knife)
-escape_pods.items.add(adamantium_katana)
 
 
 #Directions
 spaceship.east = hallway
+hallway.west = spaceship
 spaceship.south= quarters
+quarters.north = spaceship
 hallway.east = bridge
+bridge.west = hallway
 hallway.north = cargo
+cargo.south = hallway
 cargo.east = docking
+docking.west = cargo
 bridge.south = escape_pods
+escape_pods.north = bridge
 quarters.east = mess_hall
 hallway.south = mess_hall
-
-
+mess_hall.north = hallway
+mess_hall.west = quarters
 
 @when("go DIRECTION")
 @when("move DIRECTION")
@@ -77,14 +81,23 @@ def travel(direction):
 @when("look around")
 def look():
 	global current_room
-	print(current_room)
 	print(f"You can go {current_room.exits()}.")
 	if len(current_room.items) > 0: #if items are found in room
 		print("You also find a.. \n")
 		for item in current_room.items:
 			print(item) #Prints out each item in the current room
+			print("Pick up?")
 
 #Item Descriptions / define
+
+@when("look at ITEM")
+def look_at(item):
+	if item in inventory:
+		y = inventory.find(item)
+		print(y.description)
+	else:
+		print(f"You aren't carrying an {item}")
+		
 
 Item.description = ""
 
@@ -94,12 +107,17 @@ knife.description = "the knife has a dull sheen to it, but it looks somewhat use
 red_keycard =  Item("a red keycard", "keycard", "red card" , "red rank card", "card")
 red_keycard.description = "It's a red keycard. It probably opens parts of the spaceship."
 
-adamantium_katana = Item("katana", "sword", "adamantium katana", "weapon" )
+adamantium_katana = Item("adamantium katana", "katana", "sword", "weapon", "adamantium sword" )
 adamantium_katana.description = "It's a katana, but made out of adamantium, an almost indestructible metal."
 
 #variables
 current_room = space
 inventory = Bag()
+
+#Bags
+mess_hall.items.add(red_keycard)
+cargo.items.add(knife)
+escape_pods.items.add(adamantium_katana)
 
 
 #Inventory
@@ -147,7 +165,7 @@ def enter_spaceship():
 		print(current_room)
 
 
-
+		
 
 
 
