@@ -119,7 +119,6 @@ mess_hall.items.add(red_keycard)
 cargo.items.add(knife)
 escape_pods.items.add(adamantium_katana)
 
-
 #Inventory
 @when("inventory")
 @when("inv")
