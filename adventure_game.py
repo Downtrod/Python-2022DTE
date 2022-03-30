@@ -3,7 +3,7 @@ from adventurelib import *
 # Different Rooms + Start 
 starting_room1 = Room(""" 
 	The room you step into is wide and damp, the absence of light
-	preventing the talons of nature tacking back the interior of the ruins, to your right, 
+	preventing the talons of nature taking back the interior of the ruins. Yo your right, 
 	still bathed in a small amount of light you see what seems to be a pine torch.
 	""")
 starting_room2 = Room("""
@@ -13,6 +13,13 @@ starting_room2 = Room("""
 	a wooden area in the stone room, along with another room, allowing you to see a few metres into the room.
 
 	""")
+
+
+secret_room = Room(f"""
+	After breaking the wooden trapdoor, you jump down into what seems to be a small storeroom,
+	there seems to be a couple items around. Will you take {current_room.items()}?	""")
+
+
 
 print("""
 	You are Adam Hay, an infamous explorer and daredevil, 
@@ -48,7 +55,6 @@ print(current_room)
 
 
 # Different Directions + Room Exploration
-starting_room.north =
 
 @when("go DIRECTION")
 @when("move DIRECTION")
@@ -66,7 +72,7 @@ def travel(direction):
 @when("search around")
 def look():
 	global current_room
-	print(f"You can go {current_room.exits()}.")
+	print(current_room)
 	if len(current_room.items) > 0 #if items are found in room
 	print("You also find a...")
 	for item in current_room.items:
@@ -147,7 +153,7 @@ blowdarts.description("")
 mayan_blowgun = item("blowgun", "mayan blow gun", "mayan blowgun", "blow gun")
 mayan_blowgun.description("")
 
-
+secret_room.items.add(aztec_shield)
 
 
 
@@ -162,6 +168,14 @@ location = startingroom
 
 
 #Interactions in Rooms
+@when("take torch")
+@when("get torch")
+@when("lift torch")
+@when("pick up torch")
+def torch_pickup():
+	global current_room
+	if current_room is not 
+
 
 @when("go to wooden area")
 @when("examine wooden area")
@@ -186,7 +200,10 @@ def investigate_trapdoor():
 @when("break wooden area")
 def break_trap():
 	global current_room
-	if location
+	if location is not wooden_trapdoor:
+		print("What do you mean?")
+	else:
+		current_room = wooden_trapdoor
 
 
 #Start of Game
