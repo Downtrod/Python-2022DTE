@@ -1,5 +1,12 @@
 from adventurelib import *
 
+
+print("""
+	########################################################################################
+	############################### ༒☬༒ ℌ𝔞𝔫'𝔰 𝔇𝔢𝔰𝔠𝔢𝔫𝔱 ༒☬༒ ###############################
+	########################################################################################
+	\n \n \n
+	""")
 # Different Rooms + Start 
 starting_room1 = Room(""" 
 	The room you step into is wide and damp, the absence of light
@@ -10,19 +17,39 @@ starting_room2 = Room("""
 	Lighting up the room with the torch, the room transforms. Everywhere you look
 	there are intricate carvings, telling tales of great heroism and oppression,
 	freedom and imprisonment. Along with the revelation of teh carvings, you notice
-	a wooden area in the stone room, along with another room, allowing you to see a few metres into the room.
-
+	a wooden area in the stone room, along with another room, allowing you to see a few metres into the room..
+	It seems to be a hallway?
 	""")
-
-
 secret_room = Room(f"""
 	After breaking the wooden trapdoor, you jump down into what seems to be a small storeroom,
 	there seems to be a couple items around. Will you take {current_room.items()}?	""")
 
+long_hallway= room("""
+	As you step into the hallway, your view becomes more clear.
+	The hallway is long and narrow, with carvings on both sides of the wall,
+	gazing at you with the stony eyes of a predator.
+	""")
+open_room = Room("""
+	Collapsing after sprinting through the hallway, you find yourself in 
+	an open room which seems to be the lunch room of the temple.
+	Unfortunately, most of the chairs and items seem to have disintegrated,
+	unable to handle the vices of time, yet, there seems to still be some
+	items around.
+
+	To your right you see another room, it seems to be a storeroom, you also
+	see some shadowed steps to your left.
+
+
+
+	""")
+
+
+
+
 
 
 print("""
-	You are Adam Hay, an infamous explorer and daredevil, 
+	You are Adam Han, an infamous explorer and daredevil, 
 	famous for your exploits in the Zhangjiajie Mountain Range in China, and 
 	thus recieving a lot of attention of wealthy and powerful people. \n
 	Unfortunately, you are poor. \n
@@ -153,9 +180,15 @@ blowdarts.description("")
 mayan_blowgun = item("blowgun", "mayan blow gun", "mayan blowgun", "blow gun")
 mayan_blowgun.description("")
 
+
+# Items in Room
 secret_room.items.add(aztec_shield)
-
-
+tomb.items.add(silver_key)
+tomb.items.add(turqouise_cloak)
+open_room.items.add(heavy_gold_decorations)
+open_room.items.add(mayan_blowgun)
+store_room.items.add(blowdarts)
+large_room.items.add(macuahuitl)
 
 # Important Variables
 
@@ -204,6 +237,34 @@ def break_trap():
 		print("What do you mean?")
 	else:
 		current_room = wooden_trapdoor
+
+@when("go into hallway")
+@when("go into room")
+@when("walk into hallway")
+@when("walk into next room")
+@when("walk into room")
+@when("go into next room")
+def enter_hallway():
+	if current_room is not starting_room2:
+		say("I don't understand")
+	elif current_room is x:
+		aztec_sh
+	else:
+		current_room = long_hallway
+
+@when("throw rock")
+@when("chuck rock")
+@when("chuck rock into hallway")
+@when("throw rock into hallway")
+def hallway_trap():
+	if rock in inventory:
+		y - inventory.remove(rock)
+		print("""
+			You throw the rock into the hallway, the rock bounces once on the floor once,
+			suddenly numerous arrows come into your vision as the rock gets slammed into,
+			flinging it futher into the hallway
+			""")
+
 
 
 #Start of Game
