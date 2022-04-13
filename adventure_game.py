@@ -62,7 +62,7 @@ tile_traps_2 = Room("""
 	until the end of the room, where a massive, hideous statue stands. the jaguar heads are quite large, will they be able to take your weight? What about the tile path?
 	""")
 tile_traps_3 = Room("""
-	Stepping off of the tiles, you encounter a sword on what seems to be an altar, as well as a knife
+	
 	""")
 
 
@@ -175,13 +175,13 @@ Item.description = ""
 machete = item("machete", "sword", "old machete")
 machete.description = "your trusty machete which has accompanied you on many adventures, used mainly for cutting foliage."
 
-silver_key = item("silver key", "key", "keys")
+silver_key = item("silver key", "key", "keys", "silver keys")
 silver_key.description("")
 
 turqouise_cloak = item("turqoise cloak", "cloak")
 turqouise_cloak.description("")
 
-macuahuitl = ("macuahuitl", "sword", "obsidian sword", "wooden sword")
+macuahuitl = item("macuahuitl", "sword", "obsidian sword", "wooden sword", "obsidian bat", "wooden bat" , "wooden bat with obsidian shards", "obsidian wooden bat")
 macuahuitl.description("""from your numerous studies on numerous different ancient civilization's cultures, you have 
 	identified this object as a macuahuitl, a wooden bat with several pieces of cut obsidian on it,
 	in the days of the spanish conquistadors, this sword was rumoured to be able to cut a horses head off in one blow.""")
@@ -466,6 +466,16 @@ def tiles_room():
 @when("step on the tiled area")
 def tiled_trap():
 	global current_room
+	if current_room == tiled_traps_2:
+		print("""
+			hefting your shoulders up, you step onto the tiles, thankfully, no traps activate, allowing you to traverse across the room safely and leaving you 
+		in front of a large statue of an ugly looking deity, this statue is extremely recognisible, looking like an exact copy of one which was found before,
+		the statue of Coatlicue, famous for being so ugly that the man who found it instantly buried it again. In front of this statue seems to be some sort of wooden bat.
+
+
+		""")
+		current_room = tile_traps_3
+
 
 
 
